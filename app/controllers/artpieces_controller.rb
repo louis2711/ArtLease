@@ -16,7 +16,7 @@ class ArtpiecesController < ApplicationController
   private
 
   def artpiece_params
-    params.require(:artpiece).permit(:title, :artist, :description, :price, :availability)
+    params.require(:artpiece).permit(:title, :artist, :description, :price, :availability, :photo)
   end
 
 end

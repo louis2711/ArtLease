@@ -1,8 +1,12 @@
 <% @artpieces.each do |artpiece|  %>
+  <% if artpiece.photo.attached? %>
+    <%= cl_image_tag artpiece.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else  %>
+    No Picture
+  <% end %>
   <%= artpiece.title %>
   <%= artpiece.artist %>
   <%= artpiece.description %>
   <%= artpiece.price %>
   <%= artpiece.availability %>
 <% end %>
-
