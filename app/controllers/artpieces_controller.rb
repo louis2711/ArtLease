@@ -9,6 +9,7 @@ class ArtpiecesController < ApplicationController
 
   def create
     @artpiece = Artpiece.new(artpiece_params)
+    @artpiece.user = current_user
     @artpiece.save
     redirect_to artpiece_path(@artpiece)
   end
