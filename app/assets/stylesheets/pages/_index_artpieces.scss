@@ -1,0 +1,101 @@
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 46px;
+}
+
+.card-artpiece {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  border-radius: 5px;
+}
+
+.card-artpiece > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-artpiece h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-artpiece .artpiece-artist {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-artpiece .card-artpiece-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-artpiece-availability {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: auto;
+  background-color: rgb(240, 240, 240);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.availability-on {
+  color: rgb(30, 221, 100);
+}
+
+.availability-off {
+  color: rgb(234, 58, 85);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
