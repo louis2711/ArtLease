@@ -9,6 +9,7 @@ class ArtpiecesController < ApplicationController
 
   def create
     @artpiece = Artpiece.new(artpiece_params)
+    @artpiece.user = current_user
     @artpiece.save
     redirect_to artpiece_path(@artpiece)
   end
@@ -20,7 +21,7 @@ class ArtpiecesController < ApplicationController
   private
 
   def artpiece_params
-    params.require(:artpiece).permit(:title, :artist, :description, :price, :availability)
+    params.require(:artpiece).permit(:title, :artist, :description, :price, :availability, :photo)
   end
 
 end
