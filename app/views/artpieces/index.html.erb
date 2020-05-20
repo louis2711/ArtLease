@@ -4,7 +4,7 @@
       <% @artpieces.each do |artpiece|  %>
         <div class="card-artpiece">
           <% if artpiece.photo.attached? %>
-            <%= cl_image_tag artpiece.photo, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag artpiece.photo.key, height: 300, width: 400, crop: :fill %>
           <% else  %>
             <img src="https://source.unsplash.com/400x300/?paint" alt="">
           <% end %>
