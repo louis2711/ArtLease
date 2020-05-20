@@ -16,14 +16,14 @@
       </div>
     <% end %>
   </div>
-    <%= @artpiece.description %>
   <br>
+    <p><strong>Description: </strong><%= @artpiece.description %></p>
   <div class="artpiece-price-availability">
-    <p><%= @artpiece.price %>€ par jour</p>
+    <p><strong>Price: </strong><%= @artpiece.price %>€ par jour</p>
       <% if @artpiece.availability %>
-        <p>Available</p>
+        <p><strong>Available</strong></p>
       <% else %>
-        <p>Not available</p>
+        <p><strong>Not Available</strong></p>
       <% end %>
   </div>
   <div class="container">
