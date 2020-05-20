@@ -1,9 +1,11 @@
 <div class="container">
   <h1>Artpieces to rent</h1>
   <div class="card-container cards">
+
     <% @artpieces.each do |artpiece|  %>
       <%= link_to artpiece_path(artpiece), style: 'text-decoration: none' do %>
-        <div class="card-category card-artpiece">
+        <div class="card-artpiece">
+
           <% if artpiece.photo.attached? %>
             <%= cl_image_tag artpiece.photo.key, height: 300, width: 400, crop: :fill %>
           <% else  %>
@@ -26,4 +28,3 @@
     <% end %>
   </div>
 </div>
-

@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1>Create an Art Piece</h1>
+      <h1>Add an Art Piece</h1>
       <%= simple_form_for(@artpiece) do |f| %>
         <%= f.input :title %>
         <%= f.input :artist %>
         <%= f.input :description %>
         <%= f.input :price %>
-        <%= f.input :availability %>
         <%= f.input :photo %>
-        <%= f.submit 'Create' %>
+        <%= f.input :availability %>
+        <%= f.button :submit, "Done", class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
