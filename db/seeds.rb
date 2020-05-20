@@ -5,9 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "cleaning the data base"
+User.destroy_all
 Artpiece.destroy_all
+Booking.destroy_all
+puts "data base cleaned"
 
+puts "creating users"
+user1 = User.create(email: "louis@lewagon.fr", first_name: "louis", last_name: "fr", password: "testtesttest")
+user1.save!
 
+puts "creating artpieces"
 joconde = {user: User.first, title: 'La Joconde', artist: 'Leonard De Vinci', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 140, availability: true}
 noces_cana = {user: User.first, title: 'Noces de Cana', artist: 'Veronese', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 110, availability: true}
 penseur = {user: User.first, title: 'Le Penseur', artist: 'Auguste Rodin', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 80, availability: true}
@@ -24,4 +32,5 @@ cri = {user: User.first, title: 'Le Cri', artist: 'Edvard Munch', description: '
 
 [joconde, noces_cana, penseur, nympheas, nuit_etoilee, american_gothic, guernica, promenade, argenteuil, cri].each do |attributes|
   artpiece = Artpiece.create!(attributes)
+  artpiece.save!
 end
