@@ -1,0 +1,34 @@
+
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30);">
+  <div class="container">
+    <h1><%= @artpiece.title %></h1>
+    <p><%= @artpiece.artist %></p>
+  </div>
+</div> -->
+
+<div class="artpiece-banner">
+  <% if @artpiece.photo.attached? %>
+    <div class="artpiece-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @artpiece.photo.key %>')">
+      <div class="artpiece-info">
+        <h1><%= @artpiece.title %></h1>
+        <p><%= @artpiece.artist %></p>
+      </div>
+    </div>
+  <% else %>
+    <div class="artpiece-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30" %>')";>
+      <div class="artpiece-info">
+        <h1><%= @artpiece.title %></h1>
+        <p><%= @artpiece.artist %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="artpiece-description">
+  <%= @artpiece.description %>
+  <p><%= @artpiece.price %>€ par jour</p>
+    <% if @artpiece.availability %>
+      <p>Available</p>
+    <% else %>
+      <p>Not available</p>
+    <% end %>
+</div>

@@ -7,10 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Artpiece.destroy_all
 
-joconde = {user: User.first, title: 'Joconde', artist: 'Leonard De Vinci', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 140, availability: true}
-noces_cana = {user: User.first, title: 'Noces de Cana', artist: 'Veronese', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 110, availability: false}
+
+joconde = {user: User.first, title: 'La Joconde', artist: 'Leonard De Vinci', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 140, availability: true}
+noces_cana = {user: User.first, title: 'Noces de Cana', artist: 'Veronese', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 110, availability: true}
 penseur = {user: User.first, title: 'Le Penseur', artist: 'Auguste Rodin', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 80, availability: true}
-nympheas = {user: User.first, title: 'Les nymphéas', artist: 'Claude Monet', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 125, availability: false}
+nympheas = {user: User.first, title: 'Les nymphéas', artist: 'Claude Monet', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 125, availability: true}
+
 nuit_etoilee = {user: User.first, title: 'La nuit étoilée', artist: 'Vincent Van Gogh', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 132, availability: true}
 american_gothic = {user: User.first, title: 'American Gothic', artist: 'Grant Wood', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 75, availability: true}
 guernica = {user: User.first, title: 'Guernica', artist: 'Pablo Picasso', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.', price: 200, availability: true}

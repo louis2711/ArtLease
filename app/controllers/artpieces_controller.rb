@@ -14,6 +14,10 @@ class ArtpiecesController < ApplicationController
     redirect_to artpiece_path(@artpiece)
   end
 
+  def show
+    @artpiece = Artpiece.find(params[:id])
+  end
+
   private
 
   def artpiece_params
