@@ -28,6 +28,12 @@ class ArtpiecesController < ApplicationController
     redirect_to artpiece_path(@artpiece)
   end
 
+  def destroy
+    @artpiece = Artpiece.find(params[:id])
+    @artpiece.destroy
+    redirect_to root_path
+  end
+
   private
 
   def artpiece_params
