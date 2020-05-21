@@ -19,7 +19,6 @@ class ArtpiecesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
     @artpiece = Artpiece.find(params[:id])
   end
 
