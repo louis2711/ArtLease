@@ -15,22 +15,7 @@
         </div>
       <% else %>
 
-        <p><strong>Not Available</strong></p>
-      <% end %>
-  </div>
-    <% if @artpiece.user != current_user %>
-      <div class="container">
-        <div class="banner-content col-md-8">
-          <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
-          <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
-          <%= render 'bookingform' %>
 
-        <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30" %>')";>
-          <div class="artpiece-info">
-            <h1 id="title-show"><%= @artpiece.title %></h1>
-            <p><%= @artpiece.artist %></p>
-          </div>
 
         </div>
       <% end %>
@@ -46,6 +31,7 @@
           <div class="banner-content">
             <div class="show-buttons">
               <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
+              <%= render 'bookingform' %>
             </div>
           </div>
       <% else %>
