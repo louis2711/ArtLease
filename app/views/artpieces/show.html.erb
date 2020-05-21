@@ -18,17 +18,18 @@
   </div>
     <%= @artpiece.description %>
   <br>
-  <div class="artpiece-price-availability">
-    <p><%= @artpiece.price %>€ par jour</p>
-      <% if @artpiece.availability %>
-        <p>Available</p>
-      <% else %>
-        <p>Not available</p>
-      <% end %>
-  </div>
-  <div class="container">
-    <div class="banner-content justify-content-center col-md-8">
-      <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary btn-lg" %>
+  <div style="display: flex; justify-content: space-between;">
+    <div class="artpiece-price-availability">
+      <p><%= @artpiece.price %>€ par jour</p>
+        <% if @artpiece.availability %>
+          <p>Available</p>
+        <% else %>
+          <p>Not available</p>
+        <% end %>
     </div>
+      <div class="banner-content justify-content-center">
+        <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %>
+      </div>
   </div>
 </div>
