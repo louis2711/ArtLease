@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :create]
 
+  get 'dashboard', to:'pages#dashboard'
+
 end
 

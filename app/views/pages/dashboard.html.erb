@@ -1,0 +1,25 @@
+<div class="dashboard text-align-center">
+  <div class="container">
+    <h1>Welcome <%= @user.name.capitalize %> !</h1>
+    <h2>Please see below your requests:</h2>
+
+    <div class=“card-product”>
+      <img src=“”/>
+      <div class=“card-product-infos”>
+        <% @user.requests.each do |request| %>
+          <li>
+            You’ve booked: <strong><%= request.artpiece[:title] %></strong> created by <strong><%= request.artpiece.user[:title] %></strong>
+          </li>
+          <%if policy(request).edit? %>
+            <%= link_to edit_artpiece_request_path(request.artpiece.id, request.id) do %>
+            <i class=“fa fa-arrow-right” aria-hidden=“true”></i> Edit
+          <% end %>
+            <%= link_to request_path(request.id), method: :delete, data: {confirm: ‘Are you sure?’} do %>
+            <i class=“fa fa-trash” aria-hidden=“true”></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
