@@ -17,6 +17,7 @@
     <% end %>
   </div>
   <br>
+
     <p><span class="subtitle">Description:</span><%= @artpiece.description %></p>
   <div class="artpiece-price-availability">
     <p><strong>Price: </strong><%= @artpiece.price %>€ par jour</p>
@@ -30,9 +31,12 @@
       <div class="container">
         <div class="banner-content col-md-8">
           <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
+          <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 
