@@ -1,6 +1,10 @@
 class ArtpiecesController < ApplicationController
   def index
-    @artpieces = Artpiece.all
+    if params[:query].present?
+      @artpieces = Artpiece.search_by_title_and_artist(params[:query])
+    else
+      @artpieces = Artpiece.all
+    end
   end
 
   def new
