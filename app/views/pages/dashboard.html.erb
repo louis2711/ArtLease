@@ -1,20 +1,20 @@
-<div class=“dashboard text-align-center”>
-  <div class=“container”>
-    <h1>Welcome <%= @user.name.capitalize %> !</h1>
-    <h2>Please see below your bookings:</h2>
-    <div class=“card-product”>
-      <img src=“”/>
-      <div class=“card-product-infos”>
-        <% @user.bookings.each do |booking| %>
+<div class="dashboard text-align-center">
+  <div class="container">
+    <br>
+    <h1>Welcome <%= current_user.first_name.capitalize %></h1>
+    <h2>Your Bookings:</h2>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <% current_user.bookings.each do |booking| %>
           <li>
-            You’ve booked: <strong><%= booking.artpiece[:title] %></strong> created by <strong><%= booking.artpiece.user[:title] %></strong>
+            You’ve booked: <strong><%= booking.artpiece[:title] %></strong> created by <strong><%= booking.artpiece[:artist] %></strong>
           </li>
           <%if policy(booking).edit? %>
             <%= link_to edit_artpiece_booking_path(booking.artpiece.id, booking.id) do %>
-            <i class=“fa fa-arrow-right” aria-hidden=“true”></i> Edit
-          <% end %>
-            <%= link_to booking_path(booking.id), method: :delete, data: {confirm: ‘Are you sure?’} do %>
-            <i class=“fa fa-trash” aria-hidden=“true”></i>
+             <i class="fa fa-arrow-right" aria-hidden="true"></i> Edit
+            <% end %>
+            <%= link_to booking_path(booking.id), method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
           <% end %>
         <% end %>
