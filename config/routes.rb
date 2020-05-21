@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get "artpieces/:id", to: "artpieces#show"
   # , as: :artpiece
 
-
-
   get 'dashboard', to:'pages#dashboard'
 
 end
