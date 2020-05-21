@@ -14,9 +14,16 @@
           </div>
         </div>
       <% else %>
-
-
-
+        <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30’)">
+          <div class="artpiece-info">
+            <% if @artpiece.availability %>
+              <p class="show-artpiece-availability availability-on">Available</p>
+            <% else %>
+              <p class="show-artpiece-availability availability-off">Not available</p>
+            <% end %>
+            <h1><%= @artpiece.title %></h1>
+            <p><%= @artpiece.artist %></p>
+          </div>
         </div>
 
       </div>

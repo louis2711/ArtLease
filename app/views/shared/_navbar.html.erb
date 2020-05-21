@@ -18,9 +18,9 @@
       <li><%= link_to "Add an artpiece", new_artpiece_path, class: "nav-link" %></li>
       <li><%= link_to "Artpieces to rent", artpieces_path, class: "nav-link" %></li>
       <% if user_signed_in? %>
-        <li class="btn-navbar"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+        <li class="btn-navbar"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
-        <li class="btn-navbar"><%= link_to "Log out", new_user_session_path, class: "nav-link" %></li>
+        <li class="btn-navbar"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
       <% end %>
     </ul>
   </div>

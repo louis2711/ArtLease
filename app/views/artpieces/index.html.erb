@@ -2,17 +2,16 @@
 
   <h1 class="title-index-artpieces">Artpieces to rent</h1>
 
-  <div class="searchbar">
-    <%= form_tag artpieces_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find an artpiece"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-
+    <div class="searchbar">
+        <%= form_tag artpieces_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an artpiece"
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary btn-searchbar" %>
+      <% end %>
+    </div>
 
   <div class="card-container cards">
 
