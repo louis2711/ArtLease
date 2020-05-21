@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+  Your reservation
 </button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -14,16 +14,10 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@artpiece, @booking] do |f| %>
-          <%= f.input :starts_at %>
-          <%= f.input :ends_at %>
-          <%= f.input :content %>
-          <%= f.input :address %>
-          <%= f.submit class: “btn btn-danger” %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit class: 'btn btn-danger' %>
         <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
