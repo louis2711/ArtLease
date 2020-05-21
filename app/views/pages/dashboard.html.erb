@@ -9,14 +9,6 @@
           <li>
             You’ve booked: <strong><%= booking.artpiece[:title] %></strong> created by <strong><%= booking.artpiece[:artist] %></strong>
           </li>
-          <%if policy(booking).edit? %>
-            <%= link_to edit_artpiece_booking_path(booking.artpiece.id, booking.id) do %>
-             <i class="fa fa-arrow-right" aria-hidden="true"></i> Edit
-            <% end %>
-            <%= link_to booking_path(booking.id), method: :delete do %>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            <% end %>
-          <% end %>
         <% end %>
       </div>
     </div>
