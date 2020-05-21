@@ -1,23 +1,67 @@
-.banner {
+.banner-home {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
 }
 
-.banner h1 {
-  margin: 0;
+.banner-home h2 {
+  // margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
 }
 
-.banner p {
+.banner-home p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.btn {
+  text-shadow: 0.5px rgb(100, 100, 100);
+  background-color: rgb(121, 190, 183);
+  border: 2px solid rgb(121, 190, 183);
+
+  &:hover {
+    color: rgb(121, 190, 183);
+    background-color: white;
+    border: 2px solid rgb(121, 190, 183);
+  }
+}
+
+.home-cards-container {
+  margin-bottom: 40px;
+}
+
+// .banner {
+//   background-size: cover;
+//   background-position: center;
+//   padding: 150px 0;
+// }
+
+// // .banner h1 {
+// //   margin: 0;
+// //   color: white;
+// //   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// //   font-size: 32px;
+// //   font-weight: bold;
+// // }
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
+
+// .banner h1 {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
 
 .card-category {
   background-size: cover;
@@ -28,11 +72,12 @@
   align-items: center;
   color: white;
   font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -42,3 +87,4 @@
 h2 {
   color: #63b7af;
 }
+
