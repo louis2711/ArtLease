@@ -18,6 +18,22 @@ class ArtpiecesController < ApplicationController
     @artpiece = Artpiece.find(params[:id])
   end
 
+  def edit
+    @artpiece = Artpiece.find(params[:id])
+  end
+
+  def update
+    @artpiece = Artpiece.find(params[:id])
+    @artpiece.update(artpiece_params)
+    redirect_to artpiece_path(@artpiece)
+  end
+
+  def destroy
+    @artpiece = Artpiece.find(params[:id])
+    @artpiece.destroy
+    redirect_to root_path
+  end
+
   private
 
   def artpiece_params

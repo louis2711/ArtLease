@@ -17,18 +17,21 @@
     <% end %>
   </div>
   <br>
-    <p><strong>Description: </strong><%= @artpiece.description %></p>
-  <div class="artpiece-price-availability">
-    <p><strong>Price: </strong><%= @artpiece.price %>€ par jour</p>
-      <% if @artpiece.availability %>
-        <p><strong>Available</strong></p>
-      <% else %>
-        <p><strong>Not Available</strong></p>
-      <% end %>
-  </div>
-  <div class="container">
-    <div class="banner-content justify-content-center col-md-8">
-      <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary btn-lg" %>
+
+  <div style="display: flex; justify-content: space-between;">
+    <div class="artpiece-price-availability">
+      <p><%= @artpiece.price %>€ par jour</p>
+        <% if @artpiece.availability %>
+          <p>Available</p>
+        <% else %>
+          <p>Not available</p>
+        <% end %>
+    </div>
+    <div class="banner-content justify-content-center">
+      <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary" %> |
+      <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
+      <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+
     </div>
   </div>
 </div>
