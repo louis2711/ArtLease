@@ -20,6 +20,7 @@ class ArtpiecesController < ApplicationController
 
   def show
     @artpiece = Artpiece.find(params[:id])
+    @booking = Booking.new
   end
 
   def edit
