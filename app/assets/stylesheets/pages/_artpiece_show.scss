@@ -1,3 +1,13 @@
+.container-show-artpiece {
+  box-shadow: 12px 12px 20px 0.5px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+
 .artpiece-info h1 {
   margin-left: 10px;
   margin-bottom: 10px;
@@ -12,6 +22,9 @@
 // margin-bottom: 5px;
 // }
 
+.btn-show-back-artpieces {
+
+}
 
 .artpiece-banner {
   height: 300px;
@@ -31,4 +44,10 @@
   align-items: right;
 }
 
+.artpiece-img {
+  border-radius: 5px;
+}
 
+.subtitle {
+
+}
