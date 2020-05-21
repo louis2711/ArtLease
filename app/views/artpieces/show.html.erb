@@ -27,11 +27,10 @@
           <p>Not available</p>
         <% end %>
     </div>
-    <br>
-      <div class="banner-content justify-content-center">
-        <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary btn-lg" %> |
-        <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
-        <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, :class => "btn btn-primary" %>
-      </div>
+    <div class="banner-content justify-content-center">
+      <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary" %> |
+      <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
+      <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+    </div>
   </div>
 </div>
