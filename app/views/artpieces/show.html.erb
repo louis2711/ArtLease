@@ -1,42 +1,50 @@
 <div class="container container-show-artpiece">
-  <div class="artpiece-banner">
-    <% if @artpiece.photo.attached? %>
-      <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @artpiece.photo.key %>')">
-        <div class="artpiece-info">
-          <h1><%= @artpiece.title %></h1>
-          <p><%= @artpiece.artist %></p>
+  <div class="subcontainer-show-artpiece">
+    <div class="artpiece-banner">
+      <% if @artpiece.photo.attached? %>
+        <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @artpiece.photo.key %>')">
+          <div class="artpiece-info">
+            <% if @artpiece.availability %>
+              <p class="show-artpiece-availability availability-on">Available</p>
+            <% else %>
+              <p class="show-artpiece-availability availability-off">Not available</p>
+            <% end %>
+            <h1><%= @artpiece.title %></h1>
+            <p><%= @artpiece.artist %></p>
+          </div>
         </div>
-      </div>
-    <% else %>
-      <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30" %>')";>
-        <div class="artpiece-info">
-          <h1 id="title-show"><%= @artpiece.title %></h1>
-          <p><%= @artpiece.artist %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <br>
-
-    <p><span class="subtitle">Description:</span><%= @artpiece.description %></p>
-  <div class="artpiece-price-availability">
-    <p><strong>Price: </strong><%= @artpiece.price %>€ par jour</p>
-      <% if @artpiece.availability %>
-        <p><strong>Available</strong></p>
       <% else %>
-        <p><strong>Not Available</strong></p>
-      <% end %>
-  </div>
-    <% if @artpiece.user != current_user %>
-      <div class="container">
-        <div class="banner-content col-md-8">
-          <%= link_to "Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %> |
-          <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+        <div class="artpiece-banner artpiece-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "https://images.unsplash.com/photo-1423742774270-6884aac775fa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExODA5M30" %>')";>
+          <div class="artpiece-info">
+            <h1 id="title-show"><%= @artpiece.title %></h1>
+            <p><%= @artpiece.artist %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <br>
+    <div class="artpieces-infos-show">
+      <p><span class="subtitle">Description:</span> <%= @artpiece.description %></p>
+    </div>
+    <div class="artpiece-price">
+      <p><span class="subtitle">Prix:</span> <%= @artpiece.price %>€ par jour</p>
+    </div>
+      <% if @artpiece.user != current_user %>
+          <div class="banner-content">
+            <div class="show-buttons">
+              <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+      <% else %>
+          <div class="banner-content">
+            <div class="show-buttons">
+              <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %>
+              <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+            </div>
+          </div>
 
+      <% end %>
+    </div>
   </div>
 </div>
 

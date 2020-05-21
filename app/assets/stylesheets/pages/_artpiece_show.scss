@@ -2,7 +2,7 @@
   box-shadow: 12px 12px 20px 0.5px rgba(0, 0, 0, .2);
   border-radius: 5px;
   background-color: white;
-  padding: 10px;
+  padding: 15px 20px;
   padding-bottom: 30px;
   margin-bottom: 50px;
 }
@@ -17,17 +17,13 @@
   margin-left: 10px;
 }
 
-// .title-show {
-// color: white;
-// margin-bottom: 5px;
-// }
-
-.btn-show-back-artpieces {
-
+.artpieces-infos-show {
+  color: rgb(60, 60, 60);
 }
 
 .artpiece-banner {
-  height: 300px;
+  position: relative;
+  height: 450px;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -39,9 +35,10 @@
   text-shadow: 0px 0px 0px rgba(0,0,0,0.4);
 }
 
-.artpiece-price-availability {
+.artpiece-price {
   justify-content: right;
   align-items: right;
+  color: rgb(60, 60, 60);
 }
 
 .artpiece-img {
@@ -49,5 +46,34 @@
 }
 
 .subtitle {
-
+  border-bottom: solid 2px rgb(121, 190, 183);
+  font-weight: bolder;
 }
+
+.show-artpiece-availability {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: auto;
+  background-color: rgb(240, 240, 240);
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.availability-on {
+  color: rgb(30, 221, 100);
+}
+
+.availability-off {
+  color: rgb(234, 58, 85);
+}
+
+.show-buttons {
+  margin-top: 30px;
+  // display: flex;
+  // justify-content: space-between;
+}
+
