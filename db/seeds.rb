@@ -19,7 +19,7 @@ puts "data base cleaned"
 
 puts "creating users"
 
-toto = User.create(email: "louis@lewagon.fr", first_name: "louis", last_name: "f", password: "testtest")
+toto = User.create(email: "toto@lewagon.fr", first_name: "toto", last_name: "t", password: "testtest")
 toto.save!
 
 louis = User.create(email: "louis@lewagon.fr", first_name: "louis", last_name: "f", password: "testtest")
