@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :artpieces, only: [:index, :new, :create, :edit, :update, :destroy] do
-  resources :bookings, only: [:index, :create]
+  resources :bookings, only: [:index, :create, :destroy]
   end
 
   get "artpieces/:id", to: "artpieces#show"

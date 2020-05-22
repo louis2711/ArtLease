@@ -8,6 +8,9 @@
         <% current_user.bookings.each do |booking| %>
           <li>
             You’ve booked: <strong><%= booking.artpiece[:title] %></strong> created by <strong><%= booking.artpiece[:artist] %></strong>
+            <%= link_to artpiece_booking_path(booking.artpiece, booking), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" do %>
+            <%= image_tag "trash.png", class: "imgt" %>
+            <% end %>
           </li>
         <% end %>
       </div>
