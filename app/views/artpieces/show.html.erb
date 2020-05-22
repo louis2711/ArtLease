@@ -25,43 +25,52 @@
             <p><%= @artpiece.artist %></p>
           </div>
         </div>
-
-      </div>
-    <% end %>
-
-
-    </div>
-    <br>
-    <div class="artpieces-infos-show">
-      <p><span class="subtitle">Description:</span> <%= @artpiece.description %></p>
-    </div>
-    <div class="artpiece-price">
-      <p><span class="subtitle">Prix:</span> <%= @artpiece.price %>€ par jour</p>
-    </div>
-      <% if @artpiece.user != current_user %>
-          <div class="banner-content">
-            <div class="show-buttons">
-              <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
-              <%= render 'bookingform' %>
-            </div>
-          </div>
-      <% else %>
-          <div class="banner-content">
-            <div class="show-buttons">
-              <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %>
-              <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
-            </div>
-          </div>
-
       <% end %>
     </div>
-
   </div>
+
+  <br>
+  <div class="artpieces-infos-show">
+    <p><span class="subtitle">Description:</span> <%= @artpiece.description %></p>
+  </div>
+  <div class="artpiece-price">
+    <p><span class="subtitle">Prix:</span> <%= @artpiece.price %>€ par jour</p>
+  </div>
+  <% if @artpiece.user != current_user %>
+    <div class="banner-content">
+      <div class="show-buttons">
+        <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
+        <%= render 'bookingform' %>
+      </div>
+    </div>
+  <% else %>
+    <div class="banner-content">
+      <div class="show-buttons">
+        <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %>
+        <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+
+  <br>
+  <h4>Reviews</h4>
+    <% if @artpiece.reviews.empty? %>
+      <p>Be the first to leave a review</p>
+    <% else %>
+      <ul class="list-group">
+        <% @artpiece.reviews.each do |review| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge badge-primary badge-pill">
+              <% counter = 0 %>
+              <% 5.times do %>
+                <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                <% counter += 1 %>
+              <% end %>
+            </span>
+            <%= review.content %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <%= render "reviews/new", artpiece: @artpiece, review: @review %>
 </div>
-
-
-
-
-
-
-
