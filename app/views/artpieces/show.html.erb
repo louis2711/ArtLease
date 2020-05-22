@@ -36,13 +36,6 @@
   <div class="artpiece-price">
     <p><span class="subtitle">Prix:</span> <%= @artpiece.price %>€ par jour</p>
   </div>
-  <% if @artpiece.user != current_user %>
-    <div class="banner-content">
-      <div class="show-buttons">
-        <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
-        <%= render 'bookingform' %>
-      </div>
-    </div>
 
       <% if @artpiece.user != current_user %>
           <div class="banner-content">
@@ -62,7 +55,7 @@
       <% end %>
 
     </div>
-  <% end %>
+
 
   <br>
   <h4>Reviews</h4>
