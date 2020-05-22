@@ -5,31 +5,35 @@
 
     <h2>Your current Bookings:</h2>
 
-    <div class="card-container cards">
+    <div class="card-container-dashboard cards">
 
       <% @bookings.each do |booking| %>
-        <%= link_to artpiece_bookings_path(booking), style: 'text-decoration: none' do %>
-          <div class="card-artpiece">
+
+
+          <div class="card-artpiece-dashboard card-dashboard">
 
             <% if booking.artpiece.photo.attached? %>
               <%= cl_image_tag booking.artpiece.photo.key, height: 300, width: 400, crop: :fill %>
             <% else  %>
               <img src="https://source.unsplash.com/400x300/?paint" alt="">
             <% end %>
-            <div class="card-artpiece-infos">
-              <div>
-                <h2><%= booking.artpiece.title %></h2>
-                <p class="artpiece-artist"><%= booking.artpiece.artist %></p>
+
+            <div class="card-artpiece-infos card-dashboard-infos">
+              <div class="card-dashboard-title-price">
+                <p><strong><%= booking.artpiece.title %></strong></p>
+                <p class="card-artpiece-price"><%= booking.artpiece.price %>€ / jour</p>
               </div>
-              <h2 class="card-artpiece-price"><%= booking.artpiece.price %>€ / jour</h2>
-            <%= link_to artpiece_booking_path(booking.artpiece, booking), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" do %>
-            <%= image_tag "trash.png", class: "imgt" %>
-            <% end %>
+              <div class="card-dashboard-artist-trash">
+               <p class="artpiece-artist"><%= booking.artpiece.artist %></p>
+               <%= link_to artpiece_booking_path(booking.artpiece, booking), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn remove-link" do %>
+                 <%= image_tag "trash.png", class: "imgt" %>
+               <% end %>
+              </div>
 
             </div>
+            <%= link_to "", artpiece_path(booking.artpiece), class: "absolute-link" %>
           </div>
 
-        <% end %>
       <% end %>
     </div>
   </div>
