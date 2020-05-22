@@ -22,6 +22,10 @@
                 <p class="artpiece-artist"><%= booking.artpiece.artist %></p>
               </div>
               <h2 class="card-artpiece-price"><%= booking.artpiece.price %>€ / jour</h2>
+            <%= link_to artpiece_booking_path(booking.artpiece, booking), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" do %>
+            <%= image_tag "trash.png", class: "imgt" %>
+            <% end %>
+
             </div>
           </div>
 
