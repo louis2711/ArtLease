@@ -3,11 +3,8 @@ class ReviewsController < ApplicationController
     @artpiece = Artpiece.find(params[:artpiece_id])
     @review = Review.new(review_params)
     @review.artpiece = @artpiece
-    if @review.save
-      redirect_to artpiece_path(@artpiece)
-    else
-      render "artpieces/show"
-    end
+    @review.save
+    redirect_to artpiece_path(@artpiece)
   end
 
   private
