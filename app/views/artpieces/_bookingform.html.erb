@@ -13,10 +13,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [@artpiece, @booking] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.submit class: 'btn' %>
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, "Go", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
