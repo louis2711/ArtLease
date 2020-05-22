@@ -3,8 +3,7 @@
     <br>
     <h1>Welcome <%= current_user.first_name.capitalize %></h1>
 
-    <h2>Your current Bookings:</h2>
-
+    <h2 class="dashboard-title">Your current Bookings:</h2>
     <div class="card-container-dashboard cards">
 
       <% @bookings.each do |booking| %>
@@ -26,7 +25,7 @@
               <div class="card-dashboard-artist-trash">
                <p class="artpiece-artist"><%= booking.artpiece.artist %></p>
                <%= link_to artpiece_booking_path(booking.artpiece, booking), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn remove-link" do %>
-                 <%= image_tag "trash.png", class: "imgt" %>
+                 <i class="far fa-trash-alt imgt"></i>
                <% end %>
               </div>
 

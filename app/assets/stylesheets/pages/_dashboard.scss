@@ -22,7 +22,7 @@
 }
 
 .imgt {
-  width: 10px
+  width: 12px
 }
 
 .card-dashboard {
@@ -41,7 +41,7 @@
     z-index: 100;
     position: absolute;
     bottom: 16px;
-    left: 305px;
+    left: 303px;
   }
 
   &:hover {
@@ -90,5 +90,9 @@
 .card-dashboard-artist-trash {
   display: flex;
   justify-content: space-between;
+}
+
+.dashboard-title {
+  margin-bottom: 24px;
 }
 
