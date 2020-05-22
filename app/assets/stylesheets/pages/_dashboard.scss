@@ -24,3 +24,71 @@
 .imgt {
   width: 10px
 }
+
+.card-dashboard {
+  position: relative;
+  border-radius: 5px;
+
+  .absolute-link {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+  }
+
+  a.btn.remove-link {
+    z-index: 100;
+    position: absolute;
+    bottom: 16px;
+    left: 305px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+}
+
+.card-dashboard-infos {
+  margin-top: 10px;
+}
+
+.card-artpiece-dashboard > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-artpiece-dashboard h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.card-artpiece-dashboard {
+  font-size: 12px;
+  margin: 0;
+  background-color: white;
+}
+
+
+.card-artpiece-dashboard  {
+  padding: 16px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+}
+
+.card-dashboard-title-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-dashboard-artist-trash {
+  display: flex;
+  justify-content: space-between;
+}
+
