@@ -2,15 +2,29 @@
   <div class="container">
     <br>
     <h1>Welcome <%= current_user.first_name.capitalize %></h1>
-    <h2>Your Bookings:</h2>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <% current_user.bookings.each do |booking| %>
-          <li>
-            You’ve booked: <strong><%= booking.artpiece[:title] %></strong> created by <strong><%= booking.artpiece[:artist] %></strong>
-          </li>
+    <h2>Your current Bookings:</h2>
+
+    <div class="card-container cards">
+
+      <% @bookings.each do |booking| %>
+        <%= link_to artpiece_bookings_path(booking), style: 'text-decoration: none' do %>
+          <div class="card-artpiece">
+
+            <% if booking.artpiece.photo.attached? %>
+              <%= cl_image_tag booking.artpiece.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else  %>
+              <img src="https://source.unsplash.com/400x300/?paint" alt="">
+            <% end %>
+            <div class="card-artpiece-infos">
+              <div>
+                <h2><%= booking.artpiece.title %></h2>
+                <p class="artpiece-artist"><%= booking.artpiece.artist %></p>
+              </div>
+              <h2 class="card-artpiece-price"><%= booking.artpiece.price %>€ / jour</h2>
+            </div>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
