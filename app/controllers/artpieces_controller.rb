@@ -23,6 +23,7 @@ class ArtpiecesController < ApplicationController
   def show
     @artpiece = Artpiece.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
   end
 
   def edit
