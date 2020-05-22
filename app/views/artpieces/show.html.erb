@@ -41,14 +41,14 @@
       <% if @artpiece.user != current_user %>
           <div class="banner-content">
             <div class="show-buttons">
-              <%= link_to "< Back to Artpieces", artpieces_path, class: "btn btn-primary" %>
+              <%= link_to "< Back to Artpieces", artpieces_path, class: "btn" %>
               <%= render 'bookingform' %>
             </div>
           </div>
       <% else %>
           <div class="banner-content">
             <div class="show-buttons">
-              <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn btn-primary" %>
+              <%= link_to 'Edit', edit_artpiece_path(@artpiece), :class => "btn" %>
               <%= link_to 'Delete Artpiece', artpiece_path(@artpiece), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %>
             </div>
           </div>
