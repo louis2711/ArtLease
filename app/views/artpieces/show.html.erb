@@ -53,9 +53,9 @@
     <% end %>
 
   <br>
-  <h4>Reviews</h4>
+  <h4 class="review-titles"><strong>Reviews</strong></h4>
   <% if @artpiece.reviews.empty? %>
-    <p>Be the first to leave a review</p>
+    <p class="review-titles">Be the first to leave a review</p>
   <% else %>
     <ul class="list-group">
       <% @artpiece.reviews.each do |review| %>
