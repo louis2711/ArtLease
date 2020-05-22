@@ -2,6 +2,7 @@
   <div class="container">
     <br>
     <h1>Welcome <%= current_user.first_name.capitalize %></h1>
+
     <h2>Your current Bookings:</h2>
 
     <div class="card-container cards">
@@ -23,6 +24,7 @@
               <h2 class="card-artpiece-price"><%= booking.artpiece.price %>€ / jour</h2>
             </div>
           </div>
+
         <% end %>
       <% end %>
     </div>
